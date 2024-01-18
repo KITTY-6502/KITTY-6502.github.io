@@ -147,6 +147,12 @@
 <li><code>x</code> - Unconnected</li>
 </ul>
 <p><code>ROM DISABLE</code> is a signal that, when pulled high by a cartridge in Slot 1, disables the OS ROM. A cart can choose to leave this signal permanently high, to completely replace the OS ROM, or it can instead choose to implement more complex address decoding logic, allowing both to coexist within the same slot.</p>
+<h1 id="flash-rom-cart">Flash ROM Cart</h1>
+<p>The flash cart uses a standard re-writable 39sf flash NOR chip, which are avaliable in sizes of 128KiB, 256KiB and 512KiB.</p>
+<h1 id="serial-cart">Serial Cart</h1>
+<p>The serial cart allows communication between the KITTY and a modern computer via serial over USB, the KITTY is connected to a <code>16c550</code> UART, while the desktop is connected to a <code>MCP2221A</code> UART. The cart shares slot 1 with the <strong>OS ROM</strong>, being active/replacing it when <strong>BANK</strong> is <code>$40</code> or higher (bit 6 high)</p>
+<h1 id="ram-cart">RAM Cart</h1>
+<p>The RAM cart provides either 128KiB or 512KiB of SRAM memory.</p>
               
             </div>
           </div><footer>
